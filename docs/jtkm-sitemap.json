@@ -1,0 +1,427 @@
+{
+  "site": {
+    "domain": "jtkm.ch",
+    "title": "Jason Thompson | JTKM",
+    "type": "single-page-application",
+    "style": "cinematic-minimal-emotional",
+    "performance_target": "60fps",
+    "accessibility": "WCAG-2.1-AA"
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Hero",
+      "anchor": "#hero",
+      "order": 1,
+      "purpose": "Immediate emotional connection + value proposition. Establish trust and curiosity within 3 seconds.",
+      "components": [
+        "Animated SVG logo (tree growth on load)",
+        "H1 headline with stagger-in animation",
+        "H2 subheadline with fade-in",
+        "Body copy (90 words) with subtle reveal",
+        "Dual CTA buttons (primary + secondary)",
+        "Scroll indicator (animated bounce)"
+      ],
+      "animation_notes": {
+        "on_load": [
+          "SVG logo path draws from 0-100% over 1800ms with ease-out",
+          "Logo scales from 0.8 to 1.0 simultaneously",
+          "H1 words stagger in (100ms delay each) with fade + translateY",
+          "H2 fades in after H1 complete (200ms delay)",
+          "Body copy fades in 300ms after H2",
+          "CTAs fade + scale in together 400ms after body"
+        ],
+        "scroll_indicator": "Continuous bounce animation (1200ms loop, ease-in-out)",
+        "parallax": "Background subtle parallax shift on scroll (0.3 speed multiplier)"
+      },
+      "mobile_adaptations": {
+        "layout": "Stack vertically, maintain padding ratios",
+        "typography": "H1 scales to 85% size, maintain hierarchy",
+        "animations": "Reduce motion complexity, faster durations (60% of desktop)",
+        "logo": "Smaller scale (75%), maintain animation"
+      },
+      "admin_capabilities": [
+        "Edit H1 text",
+        "Edit H2 text",
+        "Edit body copy (90 word limit with counter)",
+        "Edit CTA button labels + URLs",
+        "Upload/replace background image or gradient",
+        "Toggle scroll indicator visibility"
+      ]
+    },
+    {
+      "id": "mission",
+      "name": "Mission",
+      "anchor": "#mission",
+      "order": 2,
+      "purpose": "Articulate methodology and values. Build credibility through clarity and constraint-based thinking.",
+      "components": [
+        "H2 headline",
+        "Body paragraph (multi-line)",
+        "Optional supporting visual or icon"
+      ],
+      "animation_notes": {
+        "scroll_trigger": {
+          "threshold": "25% visible",
+          "animation": [
+            "H2 fades in + translateY(40px to 0) over 700ms ease-out",
+            "Body fades in 200ms after H2, same motion",
+            "Stagger paragraphs if multiple (150ms between)"
+          ]
+        }
+      },
+      "mobile_adaptations": {
+        "layout": "Single column, increased line-height for readability",
+        "animations": "Reduce translateY to 20px, duration 500ms"
+      },
+      "admin_capabilities": [
+        "Edit H2 text",
+        "Edit body copy (WYSIWYG with paragraphs)",
+        "Upload optional icon/visual"
+      ]
+    },
+    {
+      "id": "ecosystem",
+      "name": "Ecosystem Cards",
+      "anchor": "#ecosystem",
+      "order": 3,
+      "purpose": "Present the three core products/initiatives as interconnected system. Clear value props with call-to-action.",
+      "components": [
+        "Section headline (optional)",
+        "3 product cards in grid: ProScola, Khula Box, Rise Village",
+        "Each card: Title, Description, 'Learn more' CTA",
+        "Hover states with elevation",
+        "Optional connecting line visual (SVG)"
+      ],
+      "animation_notes": {
+        "scroll_trigger": {
+          "threshold": "20% visible",
+          "animation": [
+            "Cards stagger in (200ms delay between each)",
+            "Each card: fade + translateY(60px to 0) + scale(0.95 to 1) over 800ms ease-out",
+            "Hover: lift effect (translateY -8px) + shadow increase over 300ms ease-out"
+          ]
+        }
+      },
+      "mobile_adaptations": {
+        "layout": "Stack vertically, full width cards",
+        "animations": "Stagger reduced to 100ms, translateY 30px",
+        "hover": "Tap to expand instead of hover lift"
+      },
+      "admin_capabilities": [
+        "Edit each card title",
+        "Edit each card description",
+        "Edit 'Learn more' button URLs",
+        "Upload card icons/images",
+        "Reorder cards (drag-drop)",
+        "Add/remove cards (max 4 recommended)"
+      ]
+    },
+    {
+      "id": "projects",
+      "name": "Projects & Impact",
+      "anchor": "#projects",
+      "order": 4,
+      "purpose": "Demonstrate tangible outcomes. Show the technology in action with concrete examples.",
+      "components": [
+        "H2 headline",
+        "Rich body copy with inline emphasis",
+        "Media embed or image showcase",
+        "CTA button 'See the system in action'"
+      ],
+      "animation_notes": {
+        "scroll_trigger": {
+          "threshold": "25% visible",
+          "animation": [
+            "H2 fades in with slide up (700ms)",
+            "Body content fades in sections (stagger 150ms)",
+            "Media/image reveals with scale 0.95 to 1.0 + fade (800ms)",
+            "CTA button fades + pops in last (300ms)"
+          ]
+        },
+        "media_parallax": "Image/video subtle parallax on scroll (0.2 speed)"
+      },
+      "mobile_adaptations": {
+        "layout": "Media above text, full width",
+        "animations": "Simplified, no parallax, faster reveals",
+        "media": "Auto-pause videos on mobile"
+      },
+      "admin_capabilities": [
+        "Edit H2 text",
+        "Edit body copy (rich text editor)",
+        "Upload images/videos",
+        "Edit CTA button label + URL",
+        "Toggle media position (left/right/top)"
+      ]
+    },
+    {
+      "id": "personal",
+      "name": "Personal Layer",
+      "anchor": "#personal",
+      "order": 5,
+      "purpose": "Humanize the brand. Show the person behind the systems through hobbies and philosophy.",
+      "components": [
+        "H2 headline",
+        "Body copy",
+        "Photo grid or gallery (motorcycles, cooking, photography)",
+        "CTA 'Follow along' (social links)"
+      ],
+      "animation_notes": {
+        "scroll_trigger": {
+          "threshold": "30% visible",
+          "animation": [
+            "H2 and body standard fade + slide (700ms)",
+            "Photo grid items stagger reveal (100ms delay each)",
+            "Each photo: fade + scale 0.9 to 1.0",
+            "Hover: gentle scale 1.0 to 1.05 + brightness increase"
+          ]
+        }
+      },
+      "mobile_adaptations": {
+        "layout": "2-column photo grid instead of 3-4",
+        "animations": "Faster stagger (50ms), disable hover effects"
+      },
+      "admin_capabilities": [
+        "Edit H2 text",
+        "Edit body copy",
+        "Upload/manage photo gallery (drag to reorder)",
+        "Edit CTA label + URL",
+        "Set max photos displayed"
+      ]
+    },
+    {
+      "id": "consulting",
+      "name": "Consulting & Speaking",
+      "anchor": "#consulting",
+      "order": 6,
+      "purpose": "Present services and availability. Clear CTAs for professional engagement.",
+      "components": [
+        "H2 headline",
+        "Body copy describing services",
+        "Dual CTA buttons: 'Book a strategy call' + 'Request a keynote'"
+      ],
+      "animation_notes": {
+        "scroll_trigger": {
+          "threshold": "25% visible",
+          "animation": [
+            "Standard content reveal: H2 → body → CTAs",
+            "Dual CTAs appear together with slight stagger (100ms between)",
+            "Hover: buttons scale 1.0 to 1.03 + color shift"
+          ]
+        }
+      },
+      "mobile_adaptations": {
+        "layout": "Stack CTAs vertically with full width",
+        "animations": "Standard reduced motion"
+      },
+      "admin_capabilities": [
+        "Edit H2 text",
+        "Edit body copy",
+        "Edit button 1 label + URL (Calendly or form)",
+        "Edit button 2 label + URL",
+        "Toggle button visibility (show/hide individual CTAs)"
+      ]
+    },
+    {
+      "id": "support",
+      "name": "Support a Village",
+      "anchor": "#support",
+      "order": 7,
+      "purpose": "Social proof and direct contribution opportunity. Convert emotion into action.",
+      "components": [
+        "H2 headline",
+        "Emotional body copy about impact",
+        "CTA button 'Support a village' (donation/sponsorship link)",
+        "Optional impact counter or testimonial"
+      ],
+      "animation_notes": {
+        "scroll_trigger": {
+          "threshold": "30% visible",
+          "animation": [
+            "Section has warm gradient background that fades in",
+            "Content reveals with emphasis (slightly slower, 900ms)",
+            "CTA button prominent with pulse animation on appearance",
+            "Hover: strong lift + glow effect"
+          ]
+        }
+      },
+      "mobile_adaptations": {
+        "layout": "Centered, full-width CTA",
+        "animations": "Maintain emphasis, reduce complexity"
+      },
+      "admin_capabilities": [
+        "Edit H2 text",
+        "Edit body copy",
+        "Edit CTA label + URL",
+        "Toggle impact counter display",
+        "Set background gradient colors"
+      ]
+    },
+    {
+      "id": "journal",
+      "name": "Journal Highlights",
+      "anchor": "#journal",
+      "order": 8,
+      "purpose": "Showcase thought leadership. Tease blog content to drive engagement and return visits.",
+      "components": [
+        "H2 headline",
+        "3 post preview cards",
+        "Each card: Title, excerpt (1-2 lines), Read more link",
+        "Optional 'View all posts' CTA"
+      ],
+      "animation_notes": {
+        "scroll_trigger": {
+          "threshold": "20% visible",
+          "animation": [
+            "H2 standard reveal",
+            "Post cards stagger in (150ms delay)",
+            "Hover: card lifts + title color shift + arrow slide"
+          ]
+        }
+      },
+      "mobile_adaptations": {
+        "layout": "Stack vertically or horizontal scroll",
+        "animations": "Reduced stagger (75ms)"
+      },
+      "admin_capabilities": [
+        "Add/edit/delete journal posts",
+        "For each post: title, excerpt, featured image, URL",
+        "Reorder posts (drag-drop)",
+        "Set number of posts to display (default 3)",
+        "Edit section H2"
+      ]
+    },
+    {
+      "id": "contact",
+      "name": "Contact",
+      "anchor": "#contact",
+      "order": 9,
+      "purpose": "Convert interest into conversation. Capture leads with low-friction form.",
+      "components": [
+        "H2 headline",
+        "Body copy with location + availability",
+        "Contact form: Name, Email, Organization, Message (1200 char max)",
+        "Submit button with loading states",
+        "Success/error messaging",
+        "Mini-CTAs: LinkedIn, Instagram, Download CV"
+      ],
+      "animation_notes": {
+        "scroll_trigger": {
+          "threshold": "25% visible",
+          "animation": [
+            "H2 and intro copy standard reveal",
+            "Form fields stagger in (80ms delay each)",
+            "Each field: fade + translateY(30px to 0)"
+          ]
+        },
+        "form_interactions": {
+          "focus": "Border color shift + subtle glow",
+          "validation": "Real-time with inline messages",
+          "submit": "Button morphs to spinner, then success checkmark or error",
+          "success": "Form fades out, success message fades in with confetti or subtle celebration"
+        }
+      },
+      "mobile_adaptations": {
+        "layout": "Full-width form fields, increased touch targets",
+        "animations": "Faster stagger (50ms), simplified transitions"
+      },
+      "admin_capabilities": [
+        "Edit H2 text",
+        "Edit intro body copy",
+        "Configure email recipient",
+        "Edit form field labels",
+        "Toggle required fields",
+        "Edit success/error messages",
+        "Edit social media links",
+        "Upload/update CV file"
+      ]
+    },
+    {
+      "id": "footer",
+      "name": "Footer",
+      "anchor": "#footer",
+      "order": 10,
+      "purpose": "Final brand reinforcement. Clean close with essential links and legal.",
+      "components": [
+        "Inspirational quote",
+        "Social media icons",
+        "Copyright notice",
+        "Optional: Privacy policy, Terms links"
+      ],
+      "animation_notes": {
+        "scroll_trigger": {
+          "threshold": "50% visible",
+          "animation": [
+            "Quote fades in with subtle scale",
+            "Social icons stagger in (50ms delay)",
+            "Hover: icons scale + color shift"
+          ]
+        }
+      },
+      "mobile_adaptations": {
+        "layout": "Stack elements vertically, centered",
+        "animations": "Simplified"
+      },
+      "admin_capabilities": [
+        "Edit quote text",
+        "Edit/add/remove social links",
+        "Edit copyright text",
+        "Add footer links (privacy, terms, etc.)"
+      ]
+    }
+  ],
+  "navigation": {
+    "type": "smooth-scroll-anchors",
+    "position": "fixed-top",
+    "behavior": "hide-on-scroll-down-show-on-scroll-up",
+    "items": [
+      {"label": "Home", "anchor": "#hero"},
+      {"label": "Mission", "anchor": "#mission"},
+      {"label": "Ecosystem", "anchor": "#ecosystem"},
+      {"label": "Projects", "anchor": "#projects"},
+      {"label": "Consulting", "anchor": "#consulting"},
+      {"label": "Journal", "anchor": "#journal"},
+      {"label": "Contact", "anchor": "#contact"}
+    ],
+    "external_links": [
+      {"label": "ProScola", "url": "https://proscola.com", "target": "_blank"},
+      {"label": "Khula Box", "url": "https://khulabox.com", "target": "_blank"},
+      {"label": "Rise Village", "url": "https://risevillage.org", "target": "_blank"}
+    ],
+    "mobile": {
+      "type": "hamburger-menu",
+      "animation": "slide-in-from-right",
+      "overlay": true
+    }
+  },
+  "global_animations": {
+    "page_load": {
+      "sequence": [
+        "Logo draws and scales (1800ms)",
+        "Navigation fades in (400ms) after logo 50% complete",
+        "Hero content staggers in as described above"
+      ]
+    },
+    "scroll_behavior": {
+      "smooth_scroll": true,
+      "scroll_offset": 80,
+      "easing": "cubic-bezier(0.4, 0.0, 0.2, 1)"
+    },
+    "reduced_motion": {
+      "respect": true,
+      "fallback": "Simple fades only, no transforms or complex animations"
+    },
+    "performance": {
+      "lazy_load_images": true,
+      "lazy_load_videos": true,
+      "intersection_observer": true,
+      "will_change_properties": "transform, opacity only"
+    }
+  },
+  "responsive_breakpoints": {
+    "mobile": "0-767px",
+    "tablet": "768-1023px",
+    "desktop": "1024-1439px",
+    "large_desktop": "1440px+"
+  }
+}

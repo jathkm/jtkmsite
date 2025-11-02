@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - JTKM Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #F8F5F0;
+            color: #1F2833;
+        }
+
+        /* Header */
+        .admin-header {
+            background: white;
+            border-bottom: 1px solid #E2E8F0;
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .admin-header h1 {
+            font-family: 'Lexend', sans-serif;
+            font-size: 1.5rem;
+            color: #26225E;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-view {
+            background: #A4DC3A;
+            color: #1F2833;
+            border: none;
+        }
+
+        .btn-view:hover {
+            background: #8fc428;
+        }
+
+        .btn-logout {
+            background: transparent;
+            color: #F54728;
+            border: 2px solid #F54728;
+        }
+
+        .btn-logout:hover {
+            background: #F54728;
+            color: white;
+        }
+
+        /* Main Content */
+        .admin-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 32px;
+        }
+
+        .welcome-card {
+            background: linear-gradient(135deg, #26225E 0%, #1e1a4d 100%);
+            color: white;
+            padding: 48px;
+            border-radius: 16px;
+            margin-bottom: 32px;
+        }
+
+        .welcome-card h2 {
+            font-family: 'Lexend', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .welcome-card p {
+            font-size: 1.125rem;
+            opacity: 0.9;
+        }
+
+        /* Section Grid */
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: all 0.2s ease;
+        }
+
+        .section-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .section-card h3 {
+            font-family: 'Lexend', sans-serif;
+            color: #26225E;
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+        .section-card p {
+            color: #4A5568;
+            margin-bottom: 16px;
+            font-size: 0.9375rem;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-edit {
+            flex: 1;
+            padding: 10px;
+            background: #26225E;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-edit:hover {
+            background: #1e1a4d;
+        }
+
+        /* Feature List */
+        .feature-list {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .feature-list h3 {
+            font-family: 'Lexend', sans-serif;
+            color: #26225E;
+            margin-bottom: 24px;
+            font-size: 1.5rem;
+        }
+
+        .feature-list ul {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 16px 0;
+            border-bottom: 1px solid #E2E8F0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            background: #A4DC3A;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-icon::after {
+            content: "✓";
+            color: #1F2833;
+            font-weight: bold;
+        }
+
+        .note {
+            background: #FFF9E6;
+            border-left: 4px solid #F98E2B;
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 32px;
+        }
+
+        .note strong {
+            color: #F98E2B;
+            display: block;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="admin-header">
+        <h1>JTKM Admin Dashboard</h1>
+        <div class="header-actions">
+            <a href="../index.html" class="btn btn-view" target="_blank">View Website</a>
+            <button class="btn btn-logout" onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="admin-container">
+        <!-- Welcome Card -->
+        <div class="welcome-card">
+            <h2>Welcome back, Jason! 👋</h2>
+            <p>Manage your website content and settings from this dashboard.</p>
+        </div>
+
+        <!-- Editable Sections -->
+        <div class="section-grid">
+            <div class="section-card">
+                <h3>Hero Section</h3>
+                <p>Edit headlines, body copy, and call-to-action buttons</p>
+                <div class="card-actions">
+                    <button class="btn-edit" onclick="alert('Hero editor coming in full build!')">Edit Content</button>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h3>Ecosystem Cards</h3>
+                <p>Update ProScola, Khula Box, and Rise Village cards</p>
+                <div class="card-actions">
+                    <button class="btn-edit" onclick="alert('Card editor coming in full build!')">Edit Cards</button>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h3>Projects & Impact</h3>
+                <p>Add or update project showcases and impact metrics</p>
+                <div class="card-actions">
+                    <button class="btn-edit" onclick="alert('Projects editor coming in full build!')">Edit Projects</button>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h3>Personal Section</h3>
+                <p>Update personal bio, photos, and philosophy</p>
+                <div class="card-actions">
+                    <button class="btn-edit" onclick="alert('Personal editor coming in full build!')">Edit Personal</button>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h3>Journal Posts</h3>
+                <p>Create, edit, or remove journal entries</p>
+                <div class="card-actions">
+                    <button class="btn-edit" onclick="alert('Journal editor coming in full build!')">Manage Posts</button>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h3>Contact Settings</h3>
+                <p>Update contact form, social links, and CV</p>
+                <div class="card-actions">
+                    <button class="btn-edit" onclick="alert('Contact settings coming in full build!')">Edit Settings</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features List -->
+        <div class="feature-list">
+            <h3>Admin Panel Features</h3>
+            <ul>
+                <li>
+                    <div class="feature-icon"></div>
+                    <span><strong>Content Management:</strong> Edit all website sections without code</span>
+                </li>
+                <li>
+                    <div class="feature-icon"></div>
+                    <span><strong>Image Uploads:</strong> Add and manage photos across all sections</span>
+                </li>
+                <li>
+                    <div class="feature-icon"></div>
+                    <span><strong>Journal Management:</strong> Create and publish blog posts</span>
+                </li>
+                <li>
+                    <div class="feature-icon"></div>
+                    <span><strong>Form Submissions:</strong> View contact form messages</span>
+                </li>
+                <li>
+                    <div class="feature-icon"></div>
+                    <span><strong>Preview Mode:</strong> See changes before publishing</span>
+                </li>
+                <li>
+                    <div class="feature-icon"></div>
+                    <span><strong>Secure Authentication:</strong> Protected with bcrypt password hashing</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Note -->
+        <div class="note">
+            <strong>PROTOTYPE NOTE:</strong>
+            This is the admin dashboard preview. In the full build, each "Edit" button will open a dedicated content editor with WYSIWYG capabilities, image upload, and real-time preview. The current prototype demonstrates the Hero + Ecosystem sections with full animations.
+        </div>
+    </div>
+
+    <script>
+        // Check authentication
+        if (!sessionStorage.getItem('jtkm_admin_auth')) {
+            window.location.href = 'login.html';
+        }
+
+        // Logout function
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                sessionStorage.removeItem('jtkm_admin_auth');
+                window.location.href = 'login.html';
+            }
+        }
+    </script>
+</body>
+</html>

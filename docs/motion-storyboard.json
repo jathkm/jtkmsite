@@ -1,0 +1,1058 @@
+{
+  "motion_storyboard": {
+    "project": "JTKM.ch",
+    "animation_library": "GSAP 3.12+ (recommended) or Framer Motion",
+    "performance_target": "60fps",
+    "global_principles": {
+      "duration_range": "700-900ms for most reveals",
+      "easing_preference": "ease-out (cubic-bezier(0.0, 0.0, 0.2, 1))",
+      "stagger_timing": "100-150ms between elements",
+      "threshold": "IntersectionObserver with 20-30% threshold",
+      "lazy_loading": "All images and videos lazy-loaded",
+      "reduced_motion": "Respects prefers-reduced-motion media query"
+    },
+    "sections": [
+      {
+        "section": "hero",
+        "trigger": "page_load",
+        "animations": [
+          {
+            "element": "svg_logo",
+            "type": "path_drawing + scale",
+            "sequence": [
+              {
+                "property": "stroke-dashoffset",
+                "from": "100%",
+                "to": "0%",
+                "duration": "1800ms",
+                "easing": "ease-out",
+                "delay": "0ms"
+              },
+              {
+                "property": "scale",
+                "from": 0.8,
+                "to": 1.0,
+                "duration": "1800ms",
+                "easing": "ease-out",
+                "delay": "0ms",
+                "note": "Runs simultaneously with path draw"
+              },
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "600ms",
+                "easing": "ease-out",
+                "delay": "0ms"
+              }
+            ],
+            "mobile": "Same animation but duration 1200ms"
+          },
+          {
+            "element": "h1_headline",
+            "type": "word_stagger",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "700ms",
+                "easing": "ease-out",
+                "stagger": "100ms per word",
+                "delay": "900ms (after logo 50% complete)"
+              },
+              {
+                "property": "translateY",
+                "from": "40px",
+                "to": "0px",
+                "duration": "700ms",
+                "easing": "ease-out",
+                "stagger": "100ms per word",
+                "delay": "900ms"
+              }
+            ],
+            "mobile": "Reduce translateY to 20px, duration 500ms, stagger 60ms"
+          },
+          {
+            "element": "h2_subheadline",
+            "type": "fade_slide",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "800ms",
+                "easing": "ease-out",
+                "delay": "1400ms (200ms after h1 starts)"
+              },
+              {
+                "property": "translateY",
+                "from": "30px",
+                "to": "0px",
+                "duration": "800ms",
+                "easing": "ease-out",
+                "delay": "1400ms"
+              }
+            ],
+            "mobile": "Duration 600ms, translateY 15px"
+          },
+          {
+            "element": "body_copy",
+            "type": "fade_in",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "700ms",
+                "easing": "ease-out",
+                "delay": "1900ms (300ms after h2)"
+              }
+            ],
+            "mobile": "Duration 500ms"
+          },
+          {
+            "element": "cta_buttons",
+            "type": "fade_scale",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "600ms",
+                "easing": "ease-out",
+                "delay": "2300ms (400ms after body)"
+              },
+              {
+                "property": "scale",
+                "from": 0.95,
+                "to": 1.0,
+                "duration": "600ms",
+                "easing": "ease-out",
+                "delay": "2300ms"
+              }
+            ],
+            "mobile": "Duration 400ms"
+          },
+          {
+            "element": "scroll_indicator",
+            "type": "continuous_bounce",
+            "sequence": [
+              {
+                "property": "translateY",
+                "from": "0px",
+                "to": "12px",
+                "duration": "1200ms",
+                "easing": "ease-in-out",
+                "loop": "infinite",
+                "yoyo": true,
+                "delay": "3000ms (after all content loaded)"
+              }
+            ],
+            "mobile": "Same, translateY to 8px"
+          }
+        ],
+        "parallax": {
+          "element": "background",
+          "scroll_speed": 0.3,
+          "mobile": "disabled"
+        }
+      },
+      {
+        "section": "mission",
+        "trigger": "scroll_into_view",
+        "threshold": "25%",
+        "animations": [
+          {
+            "element": "h2",
+            "type": "fade_slide",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "700ms",
+                "easing": "ease-out",
+                "delay": "0ms"
+              },
+              {
+                "property": "translateY",
+                "from": "40px",
+                "to": "0px",
+                "duration": "700ms",
+                "easing": "ease-out",
+                "delay": "0ms"
+              }
+            ],
+            "mobile": "Duration 500ms, translateY 20px"
+          },
+          {
+            "element": "body_paragraphs",
+            "type": "fade_slide_stagger",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "700ms",
+                "easing": "ease-out",
+                "delay": "200ms (after h2)",
+                "stagger": "150ms per paragraph"
+              },
+              {
+                "property": "translateY",
+                "from": "30px",
+                "to": "0px",
+                "duration": "700ms",
+                "easing": "ease-out",
+                "delay": "200ms",
+                "stagger": "150ms per paragraph"
+              }
+            ],
+            "mobile": "Duration 500ms, stagger 100ms, translateY 15px"
+          }
+        ]
+      },
+      {
+        "section": "ecosystem",
+        "trigger": "scroll_into_view",
+        "threshold": "20%",
+        "animations": [
+          {
+            "element": "section_headline",
+            "type": "fade_slide",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "700ms",
+                "easing": "ease-out",
+                "delay": "0ms"
+              },
+              {
+                "property": "translateY",
+                "from": "40px",
+                "to": "0px",
+                "duration": "700ms",
+                "easing": "ease-out",
+                "delay": "0ms"
+              }
+            ],
+            "mobile": "Duration 500ms, translateY 20px"
+          },
+          {
+            "element": "product_cards",
+            "type": "fade_slide_scale_stagger",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "800ms",
+                "easing": "ease-out",
+                "delay": "200ms (after headline)",
+                "stagger": "200ms per card"
+              },
+              {
+                "property": "translateY",
+                "from": "60px",
+                "to": "0px",
+                "duration": "800ms",
+                "easing": "ease-out",
+                "delay": "200ms",
+                "stagger": "200ms per card"
+              },
+              {
+                "property": "scale",
+                "from": 0.95,
+                "to": 1.0,
+                "duration": "800ms",
+                "easing": "ease-out",
+                "delay": "200ms",
+                "stagger": "200ms per card"
+              }
+            ],
+            "mobile": "Duration 600ms, stagger 100ms, translateY 30px"
+          }
+        ],
+        "hover_states": [
+          {
+            "element": "card",
+            "trigger": "mouseenter",
+            "sequence": [
+              {
+                "property": "translateY",
+                "from": "0px",
+                "to": "-8px",
+                "duration": "300ms",
+                "easing": "ease-out"
+              },
+              {
+                "property": "box-shadow",
+                "from": "var(--shadow-sm)",
+                "to": "var(--shadow-lg)",
+                "duration": "300ms",
+                "easing": "ease-out"
+              }
+            ],
+            "mobile": "Tap to expand instead, no hover"
+          }
+        ]
+      },
+      {
+        "section": "projects",
+        "trigger": "scroll_into_view",
+        "threshold": "25%",
+        "animations": [
+          {
+            "element": "h2",
+            "type": "fade_slide",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "700ms",
+                "easing": "ease-out",
+                "delay": "0ms"
+              },
+              {
+                "property": "translateY",
+                "from": "40px",
+                "to": "0px",
+                "duration": "700ms",
+                "easing": "ease-out",
+                "delay": "0ms"
+              }
+            ],
+            "mobile": "Duration 500ms, translateY 20px"
+          },
+          {
+            "element": "body_content",
+            "type": "fade_stagger_sections",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "700ms",
+                "easing": "ease-out",
+                "delay": "200ms",
+                "stagger": "150ms per paragraph/section"
+              }
+            ],
+            "mobile": "Duration 500ms, stagger 100ms"
+          },
+          {
+            "element": "media_image_video",
+            "type": "fade_scale",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "800ms",
+                "easing": "ease-out",
+                "delay": "400ms"
+              },
+              {
+                "property": "scale",
+                "from": 0.95,
+                "to": 1.0,
+                "duration": "800ms",
+                "easing": "ease-out",
+                "delay": "400ms"
+              }
+            ],
+            "mobile": "Duration 600ms"
+          },
+          {
+            "element": "cta_button",
+            "type": "fade_pop",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "300ms",
+                "easing": "ease-out",
+                "delay": "800ms"
+              },
+              {
+                "property": "scale",
+                "from": 0.9,
+                "to": 1.0,
+                "duration": "300ms",
+                "easing": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+                "delay": "800ms"
+              }
+            ],
+            "mobile": "Duration 250ms"
+          }
+        ],
+        "parallax": {
+          "element": "media",
+          "scroll_speed": 0.2,
+          "mobile": "disabled"
+        }
+      },
+      {
+        "section": "personal",
+        "trigger": "scroll_into_view",
+        "threshold": "30%",
+        "animations": [
+          {
+            "element": "h2_and_body",
+            "type": "fade_slide",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "700ms",
+                "easing": "ease-out",
+                "delay": "0ms"
+              },
+              {
+                "property": "translateY",
+                "from": "40px",
+                "to": "0px",
+                "duration": "700ms",
+                "easing": "ease-out",
+                "delay": "0ms"
+              }
+            ],
+            "mobile": "Duration 500ms, translateY 20px"
+          },
+          {
+            "element": "photo_grid_items",
+            "type": "fade_scale_stagger",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "600ms",
+                "easing": "ease-out",
+                "delay": "300ms",
+                "stagger": "100ms per photo"
+              },
+              {
+                "property": "scale",
+                "from": 0.9,
+                "to": 1.0,
+                "duration": "600ms",
+                "easing": "ease-out",
+                "delay": "300ms",
+                "stagger": "100ms per photo"
+              }
+            ],
+            "mobile": "Duration 400ms, stagger 50ms"
+          },
+          {
+            "element": "cta",
+            "type": "fade_in",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "500ms",
+                "easing": "ease-out",
+                "delay": "900ms"
+              }
+            ],
+            "mobile": "Duration 400ms"
+          }
+        ],
+        "hover_states": [
+          {
+            "element": "photo_item",
+            "trigger": "mouseenter",
+            "sequence": [
+              {
+                "property": "scale",
+                "from": 1.0,
+                "to": 1.05,
+                "duration": "300ms",
+                "easing": "ease-out"
+              },
+              {
+                "property": "filter:brightness",
+                "from": 1.0,
+                "to": 1.1,
+                "duration": "300ms",
+                "easing": "ease-out"
+              }
+            ],
+            "mobile": "disabled"
+          }
+        ]
+      },
+      {
+        "section": "consulting",
+        "trigger": "scroll_into_view",
+        "threshold": "25%",
+        "animations": [
+          {
+            "element": "h2",
+            "type": "fade_slide",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "700ms",
+                "easing": "ease-out",
+                "delay": "0ms"
+              },
+              {
+                "property": "translateY",
+                "from": "40px",
+                "to": "0px",
+                "duration": "700ms",
+                "easing": "ease-out",
+                "delay": "0ms"
+              }
+            ],
+            "mobile": "Duration 500ms, translateY 20px"
+          },
+          {
+            "element": "body",
+            "type": "fade_in",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "700ms",
+                "easing": "ease-out",
+                "delay": "200ms"
+              }
+            ],
+            "mobile": "Duration 500ms"
+          },
+          {
+            "element": "dual_cta_buttons",
+            "type": "fade_scale_stagger",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "600ms",
+                "easing": "ease-out",
+                "delay": "400ms",
+                "stagger": "100ms between buttons"
+              },
+              {
+                "property": "scale",
+                "from": 0.95,
+                "to": 1.0,
+                "duration": "600ms",
+                "easing": "ease-out",
+                "delay": "400ms",
+                "stagger": "100ms between buttons"
+              }
+            ],
+            "mobile": "Duration 400ms, stagger 50ms"
+          }
+        ],
+        "hover_states": [
+          {
+            "element": "button",
+            "trigger": "mouseenter",
+            "sequence": [
+              {
+                "property": "scale",
+                "from": 1.0,
+                "to": 1.03,
+                "duration": "200ms",
+                "easing": "ease-out"
+              },
+              {
+                "property": "background-color",
+                "duration": "200ms",
+                "easing": "ease-out",
+                "note": "Shifts along gradient"
+              }
+            ],
+            "mobile": "Tap state: scale 0.97 briefly"
+          }
+        ]
+      },
+      {
+        "section": "support",
+        "trigger": "scroll_into_view",
+        "threshold": "30%",
+        "animations": [
+          {
+            "element": "background_gradient",
+            "type": "fade_in",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "800ms",
+                "easing": "ease-out",
+                "delay": "0ms"
+              }
+            ],
+            "mobile": "Duration 600ms"
+          },
+          {
+            "element": "h2",
+            "type": "fade_slide_emphasis",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "900ms",
+                "easing": "ease-out",
+                "delay": "200ms"
+              },
+              {
+                "property": "translateY",
+                "from": "50px",
+                "to": "0px",
+                "duration": "900ms",
+                "easing": "ease-out",
+                "delay": "200ms"
+              }
+            ],
+            "mobile": "Duration 600ms, translateY 25px"
+          },
+          {
+            "element": "body",
+            "type": "fade_in",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "800ms",
+                "easing": "ease-out",
+                "delay": "500ms"
+              }
+            ],
+            "mobile": "Duration 500ms"
+          },
+          {
+            "element": "cta_button",
+            "type": "fade_pulse",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "600ms",
+                "easing": "ease-out",
+                "delay": "800ms"
+              },
+              {
+                "property": "scale",
+                "from": 0.9,
+                "to": 1.0,
+                "duration": "600ms",
+                "easing": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+                "delay": "800ms"
+              },
+              {
+                "property": "scale",
+                "from": 1.0,
+                "to": 1.05,
+                "duration": "1000ms",
+                "easing": "ease-in-out",
+                "loop": "3 times",
+                "yoyo": true,
+                "delay": "1600ms",
+                "note": "Gentle pulsing to draw attention"
+              }
+            ],
+            "mobile": "No pulsing loop on mobile"
+          }
+        ],
+        "hover_states": [
+          {
+            "element": "cta_button",
+            "trigger": "mouseenter",
+            "sequence": [
+              {
+                "property": "translateY",
+                "from": "0px",
+                "to": "-4px",
+                "duration": "250ms",
+                "easing": "ease-out"
+              },
+              {
+                "property": "box-shadow",
+                "from": "var(--shadow-green)",
+                "to": "var(--shadow-lg)",
+                "duration": "250ms",
+                "easing": "ease-out",
+                "note": "Strong glow effect"
+              }
+            ],
+            "mobile": "disabled"
+          }
+        ]
+      },
+      {
+        "section": "journal",
+        "trigger": "scroll_into_view",
+        "threshold": "20%",
+        "animations": [
+          {
+            "element": "h2",
+            "type": "fade_slide",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "700ms",
+                "easing": "ease-out",
+                "delay": "0ms"
+              },
+              {
+                "property": "translateY",
+                "from": "40px",
+                "to": "0px",
+                "duration": "700ms",
+                "easing": "ease-out",
+                "delay": "0ms"
+              }
+            ],
+            "mobile": "Duration 500ms, translateY 20px"
+          },
+          {
+            "element": "post_cards",
+            "type": "fade_slide_stagger",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "700ms",
+                "easing": "ease-out",
+                "delay": "200ms",
+                "stagger": "150ms per card"
+              },
+              {
+                "property": "translateY",
+                "from": "50px",
+                "to": "0px",
+                "duration": "700ms",
+                "easing": "ease-out",
+                "delay": "200ms",
+                "stagger": "150ms per card"
+              }
+            ],
+            "mobile": "Duration 500ms, stagger 75ms, translateY 25px"
+          }
+        ],
+        "hover_states": [
+          {
+            "element": "post_card",
+            "trigger": "mouseenter",
+            "sequence": [
+              {
+                "property": "translateY",
+                "from": "0px",
+                "to": "-6px",
+                "duration": "300ms",
+                "easing": "ease-out"
+              },
+              {
+                "property": "title_color",
+                "from": "var(--color-text-primary)",
+                "to": "var(--green-2)",
+                "duration": "300ms",
+                "easing": "ease-out"
+              },
+              {
+                "property": "arrow_translateX",
+                "from": "0px",
+                "to": "4px",
+                "duration": "300ms",
+                "easing": "ease-out",
+                "note": "Read more arrow slides right"
+              }
+            ],
+            "mobile": "disabled"
+          }
+        ]
+      },
+      {
+        "section": "contact",
+        "trigger": "scroll_into_view",
+        "threshold": "25%",
+        "animations": [
+          {
+            "element": "h2_and_intro",
+            "type": "fade_slide",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "700ms",
+                "easing": "ease-out",
+                "delay": "0ms"
+              },
+              {
+                "property": "translateY",
+                "from": "40px",
+                "to": "0px",
+                "duration": "700ms",
+                "easing": "ease-out",
+                "delay": "0ms"
+              }
+            ],
+            "mobile": "Duration 500ms, translateY 20px"
+          },
+          {
+            "element": "form_fields",
+            "type": "fade_slide_stagger",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "600ms",
+                "easing": "ease-out",
+                "delay": "200ms",
+                "stagger": "80ms per field"
+              },
+              {
+                "property": "translateY",
+                "from": "30px",
+                "to": "0px",
+                "duration": "600ms",
+                "easing": "ease-out",
+                "delay": "200ms",
+                "stagger": "80ms per field"
+              }
+            ],
+            "mobile": "Duration 400ms, stagger 50ms, translateY 15px"
+          },
+          {
+            "element": "submit_button",
+            "type": "fade_in",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "500ms",
+                "easing": "ease-out",
+                "delay": "600ms"
+              }
+            ],
+            "mobile": "Duration 400ms"
+          }
+        ],
+        "form_interactions": [
+          {
+            "trigger": "field_focus",
+            "sequence": [
+              {
+                "property": "border-color",
+                "from": "var(--border-color)",
+                "to": "var(--green-2)",
+                "duration": "200ms",
+                "easing": "ease-out"
+              },
+              {
+                "property": "box-shadow",
+                "from": "none",
+                "to": "0 0 0 3px rgba(164, 220, 58, 0.1)",
+                "duration": "200ms",
+                "easing": "ease-out"
+              }
+            ]
+          },
+          {
+            "trigger": "form_submit",
+            "sequence": [
+              {
+                "property": "button_morph_to_spinner",
+                "duration": "300ms",
+                "easing": "ease-in-out",
+                "note": "Button content fades out, spinner fades in"
+              },
+              {
+                "property": "spinner_rotation",
+                "duration": "1000ms",
+                "easing": "linear",
+                "loop": "infinite",
+                "note": "While processing"
+              }
+            ]
+          },
+          {
+            "trigger": "form_success",
+            "sequence": [
+              {
+                "property": "spinner_to_checkmark",
+                "duration": "400ms",
+                "easing": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+                "note": "Spinner morphs to checkmark with bounce"
+              },
+              {
+                "property": "form_fade_out",
+                "duration": "500ms",
+                "easing": "ease-out",
+                "delay": "1000ms"
+              },
+              {
+                "property": "success_message_fade_in",
+                "duration": "600ms",
+                "easing": "ease-out",
+                "delay": "1200ms"
+              },
+              {
+                "property": "optional_confetti",
+                "duration": "2000ms",
+                "delay": "1200ms",
+                "note": "Subtle confetti or particle effect"
+              }
+            ]
+          },
+          {
+            "trigger": "form_error",
+            "sequence": [
+              {
+                "property": "shake_animation",
+                "translateX": "[-10px, 10px, -10px, 10px, -5px, 5px, 0]",
+                "duration": "500ms",
+                "easing": "ease-in-out"
+              },
+              {
+                "property": "error_message_fade_in",
+                "duration": "300ms",
+                "easing": "ease-out"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": "footer",
+        "trigger": "scroll_into_view",
+        "threshold": "50%",
+        "animations": [
+          {
+            "element": "quote",
+            "type": "fade_scale",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "800ms",
+                "easing": "ease-out",
+                "delay": "0ms"
+              },
+              {
+                "property": "scale",
+                "from": 0.98,
+                "to": 1.0,
+                "duration": "800ms",
+                "easing": "ease-out",
+                "delay": "0ms"
+              }
+            ],
+            "mobile": "Duration 600ms"
+          },
+          {
+            "element": "social_icons",
+            "type": "fade_stagger",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "500ms",
+                "easing": "ease-out",
+                "delay": "300ms",
+                "stagger": "50ms per icon"
+              }
+            ],
+            "mobile": "Duration 400ms, stagger 30ms"
+          },
+          {
+            "element": "copyright",
+            "type": "fade_in",
+            "sequence": [
+              {
+                "property": "opacity",
+                "from": 0,
+                "to": 1,
+                "duration": "500ms",
+                "easing": "ease-out",
+                "delay": "600ms"
+              }
+            ],
+            "mobile": "Duration 400ms"
+          }
+        ],
+        "hover_states": [
+          {
+            "element": "social_icon",
+            "trigger": "mouseenter",
+            "sequence": [
+              {
+                "property": "scale",
+                "from": 1.0,
+                "to": 1.15,
+                "duration": "200ms",
+                "easing": "ease-out"
+              },
+              {
+                "property": "color",
+                "from": "var(--color-text-secondary)",
+                "to": "var(--green-2)",
+                "duration": "200ms",
+                "easing": "ease-out"
+              }
+            ],
+            "mobile": "disabled"
+          }
+        ]
+      }
+    ],
+    "global_scroll_behaviors": {
+      "smooth_scroll": {
+        "enabled": true,
+        "behavior": "smooth",
+        "easing": "cubic-bezier(0.4, 0.0, 0.2, 1)",
+        "duration": "800ms",
+        "offset": 80
+      },
+      "scroll_progress_indicator": {
+        "enabled": "optional",
+        "type": "top_bar",
+        "color": "var(--green-2)",
+        "height": "3px",
+        "animation": "width 0 to 100% based on scroll progress"
+      },
+      "navigation_hide_show": {
+        "hide_on_scroll_down": true,
+        "show_on_scroll_up": true,
+        "threshold": "50px scroll distance",
+        "transition": "300ms ease-out"
+      }
+    },
+    "performance_optimizations": {
+      "will_change": "Use sparingly, only during active animations on transform and opacity",
+      "intersection_observer": "All scroll-triggered animations",
+      "requestAnimationFrame": "For smooth scroll and parallax",
+      "lazy_loading": "All images, videos, and heavy content below fold",
+      "debounce_resize": "300ms for responsive adjustments"
+    }
+  }
+}

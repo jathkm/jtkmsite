@@ -1,0 +1,29 @@
+# JTKM.ch Robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://jtkm.ch/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*.json$
+
+# Allow images and assets
+Allow: /images/
+Allow: /assets/
+
+# Crawl delay
+Crawl-delay: 1
+
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

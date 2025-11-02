@@ -1,0 +1,423 @@
+/* ============================================================================
+   JTKM.ch Design System Tokens
+   Competition-Grade CSS Architecture
+   ============================================================================ */
+
+:root {
+  
+  /* --------------------------------------------------------------------------
+     COLOR PALETTE
+     -------------------------------------------------------------------------- */
+  
+  /* Primary Colors */
+  --indigo: #26225E;
+  --graphite: #1F2833;
+  --sand: #F8F5F0;
+  
+  /* Accent Colors - Growth */
+  --green-1: #A4DC3A;
+  --green-2: #4FA04F;
+  
+  /* Accent Colors - Warmth */
+  --warm-1: #F54728;
+  --warm-2: #F98E2B;
+  
+  /* Semantic Color Roles */
+  --color-primary: var(--indigo);
+  --color-text-primary: var(--graphite);
+  --color-text-secondary: #4A5568;
+  --color-background: var(--sand);
+  --color-background-alt: #FFFFFF;
+  --color-surface: #FFFFFF;
+  
+  /* State Colors */
+  --color-success: var(--green-2);
+  --color-error: var(--warm-1);
+  --color-warning: var(--warm-2);
+  --color-info: var(--indigo);
+  
+  /* Overlay & Shadows */
+  --color-overlay: rgba(31, 40, 51, 0.7);
+  --color-shadow: rgba(0, 0, 0, 0.08);
+  
+  
+  /* --------------------------------------------------------------------------
+     GRADIENTS
+     -------------------------------------------------------------------------- */
+  
+  --grad-green: linear-gradient(135deg, var(--green-1), var(--green-2));
+  --grad-warm: linear-gradient(135deg, var(--warm-1), var(--warm-2));
+  --grad-indigo: linear-gradient(135deg, #3a3576, var(--indigo));
+  --grad-hero: linear-gradient(160deg, var(--sand) 0%, #e8e4dc 100%);
+  --grad-support: linear-gradient(135deg, rgba(164, 220, 58, 0.1), rgba(79, 160, 79, 0.1));
+  
+  
+  /* --------------------------------------------------------------------------
+     TYPOGRAPHY
+     -------------------------------------------------------------------------- */
+  
+  /* Font Families */
+  --font-h: "Lexend", system-ui, -apple-system, sans-serif;
+  --font-b: "Inter", system-ui, -apple-system, sans-serif;
+  --font-q: "Playfair Display", Georgia, serif;
+  
+  /* Font Sizes - Fluid Scale */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);      /* 12-14px */
+  --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);         /* 14-16px */
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);      /* 16-18px */
+  --text-lg: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);        /* 18-22px */
+  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.75rem);       /* 20-28px */
+  --text-2xl: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);         /* 24-40px */
+  --text-3xl: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);           /* 32-56px */
+  --text-4xl: clamp(2.5rem, 1.8rem + 3.5vw, 4.5rem);         /* 40-72px */
+  --text-5xl: clamp(3rem, 2rem + 5vw, 6rem);                 /* 48-96px */
+  
+  /* Line Heights */
+  --leading-tight: 1.1;
+  --leading-snug: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 1.75;
+  
+  /* Font Weights */
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  
+  /* Letter Spacing */
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  
+  
+  /* --------------------------------------------------------------------------
+     SPACING - 4/8px Grid System
+     -------------------------------------------------------------------------- */
+  
+  --space-0: 0;
+  --space-1: 4px;       /* 0.25rem */
+  --space-2: 8px;       /* 0.5rem */
+  --space-3: 12px;      /* 0.75rem */
+  --space-4: 16px;      /* 1rem */
+  --space-5: 24px;      /* 1.5rem */
+  --space-6: 32px;      /* 2rem */
+  --space-7: 48px;      /* 3rem */
+  --space-8: 72px;      /* 4.5rem */
+  --space-9: 96px;      /* 6rem */
+  --space-10: 128px;    /* 8rem */
+  --space-11: 160px;    /* 10rem */
+  --space-12: 192px;    /* 12rem */
+  
+  /* Semantic Spacing */
+  --space-section-mobile: var(--space-8);
+  --space-section-tablet: var(--space-9);
+  --space-section-desktop: var(--space-10);
+  
+  --space-container-padding: clamp(1rem, 5vw, 2rem);
+  
+  
+  /* --------------------------------------------------------------------------
+     LAYOUT
+     -------------------------------------------------------------------------- */
+  
+  --container-max: 1280px;
+  --container-narrow: 768px;
+  --container-wide: 1440px;
+  
+  --content-max: 65ch; /* Optimal reading width */
+  
+  
+  /* --------------------------------------------------------------------------
+     BORDERS & RADII
+     -------------------------------------------------------------------------- */
+  
+  --radius-sm: 6px;
+  --radius-1: 8px;
+  --radius-2: 14px;
+  --radius-3: 22px;
+  --radius-full: 9999px;
+  
+  --border-width: 1px;
+  --border-width-thick: 2px;
+  
+  --border-color: rgba(31, 40, 51, 0.1);
+  --border-color-strong: rgba(31, 40, 51, 0.2);
+  
+  
+  /* --------------------------------------------------------------------------
+     SHADOWS
+     -------------------------------------------------------------------------- */
+  
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-1: 0 6px 24px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.16);
+  
+  /* Colored Shadows for CTAs */
+  --shadow-green: 0 8px 24px rgba(164, 220, 58, 0.25);
+  --shadow-warm: 0 8px 24px rgba(245, 71, 40, 0.25);
+  --shadow-indigo: 0 8px 24px rgba(38, 34, 94, 0.25);
+  
+  
+  /* --------------------------------------------------------------------------
+     Z-INDEX LAYERS
+     -------------------------------------------------------------------------- */
+  
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+  
+  
+  /* --------------------------------------------------------------------------
+     MOTION & ANIMATION
+     -------------------------------------------------------------------------- */
+  
+  /* Durations */
+  --duration-instant: 100ms;
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --duration-slower: 700ms;
+  --duration-slowest: 900ms;
+  --duration-hero: 1800ms;
+  
+  /* Easings */
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0.0, 1, 1);
+  --ease-out: cubic-bezier(0.0, 0.0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-smooth: cubic-bezier(0.4, 0.0, 0.2, 1);
+  
+  /* Animation Utilities */
+  --stagger-delay: 100ms;
+  --stagger-delay-fast: 50ms;
+  --stagger-delay-slow: 150ms;
+  
+  
+  /* --------------------------------------------------------------------------
+     BREAKPOINTS (for JS usage)
+     -------------------------------------------------------------------------- */
+  
+  --bp-mobile: 767px;
+  --bp-tablet: 1023px;
+  --bp-desktop: 1439px;
+  
+  
+  /* --------------------------------------------------------------------------
+     ACCESSIBILITY
+     -------------------------------------------------------------------------- */
+  
+  --focus-ring: 0 0 0 3px rgba(164, 220, 58, 0.4);
+  --focus-ring-offset: 2px;
+  
+}
+
+
+/* ============================================================================
+   REDUCED MOTION SUPPORT
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-instant: 0ms;
+    --duration-fast: 0ms;
+    --duration-normal: 0ms;
+    --duration-slow: 0ms;
+    --duration-slower: 0ms;
+    --duration-slowest: 0ms;
+    --duration-hero: 0ms;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* ============================================================================
+   TYPOGRAPHY SYSTEM
+   ============================================================================ */
+
+.text-display {
+  font-family: var(--font-h);
+  font-size: var(--text-5xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+.text-h1 {
+  font-family: var(--font-h);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+.text-h2 {
+  font-family: var(--font-h);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+}
+
+.text-h3 {
+  font-family: var(--font-h);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+}
+
+.text-h4 {
+  font-family: var(--font-h);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-normal);
+}
+
+.text-body-lg {
+  font-family: var(--font-b);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-normal);
+  line-height: var(--leading-relaxed);
+}
+
+.text-body {
+  font-family: var(--font-b);
+  font-size: var(--text-base);
+  font-weight: var(--weight-normal);
+  line-height: var(--leading-normal);
+}
+
+.text-body-sm {
+  font-family: var(--font-b);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-normal);
+  line-height: var(--leading-normal);
+}
+
+.text-quote {
+  font-family: var(--font-q);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-normal);
+  line-height: var(--leading-relaxed);
+  font-style: italic;
+}
+
+.text-label {
+  font-family: var(--font-b);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+
+/* ============================================================================
+   UTILITY CLASSES
+   ============================================================================ */
+
+/* Gradient Backgrounds */
+.bg-grad-green { background: var(--grad-green); }
+.bg-grad-warm { background: var(--grad-warm); }
+.bg-grad-indigo { background: var(--grad-indigo); }
+.bg-grad-hero { background: var(--grad-hero); }
+.bg-grad-support { background: var(--grad-support); }
+
+/* Text Gradients */
+.text-grad-green {
+  background: var(--grad-green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-grad-warm {
+  background: var(--grad-warm);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shadows */
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+.shadow-green { box-shadow: var(--shadow-green); }
+.shadow-warm { box-shadow: var(--shadow-warm); }
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-container-padding);
+  padding-right: var(--space-container-padding);
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+}
+
+.container-wide {
+  max-width: var(--container-wide);
+}
+
+/* Focus States */
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+
+/* ============================================================================
+   RESPONSIVE UTILITIES
+   ============================================================================ */
+
+@media (max-width: 767px) {
+  :root {
+    --space-section: var(--space-section-mobile);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    --space-section: var(--space-section-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --space-section: var(--space-section-desktop);
+  }
+}
+
+
+/* ============================================================================
+   PRINT STYLES
+   ============================================================================ */
+
+@media print {
+  :root {
+    --color-background: white;
+    --color-text-primary: black;
+  }
+}

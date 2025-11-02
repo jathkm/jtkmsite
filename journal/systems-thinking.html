@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What building a bike taught me about systems | Jason Thompson</title>
+    <meta name="description" content="Rebuilding motorcycles and designing software share the same principles.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        .article-hero {
+            padding: var(--space-10) var(--space-6) var(--space-8);
+            background: var(--grad-hero);
+            text-align: center;
+        }
+        
+        .article-hero h1 {
+            max-width: 800px;
+            margin: 0 auto var(--space-5);
+        }
+        
+        .article-meta {
+            color: var(--color-text-secondary);
+            font-size: 0.9375rem;
+        }
+        
+        .article-content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: var(--space-8) var(--space-6);
+        }
+        
+        .article-content p {
+            font-size: var(--text-lg);
+            line-height: 1.8;
+            margin-bottom: var(--space-6);
+        }
+        
+        .article-content h2 {
+            margin-top: var(--space-8);
+            margin-bottom: var(--space-5);
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: var(--space-6);
+            color: var(--indigo);
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            gap: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-container">
+            <a href="../index.html#hero" class="nav-logo-wrapper">
+                <img src="../assets/images/jtkm-tree-logo.png" alt="JTKM Logo" class="nav-logo-image">
+                <span class="nav-logo-text">JTKM</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html#hero">Home</a></li>
+                <li><a href="../index.html#mission">Mission</a></li>
+                <li><a href="../index.html#ecosystem">Ecosystem</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#consulting">Consulting</a></li>
+                <li><a href="../index.html#journal">Journal</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-hero">
+            <a href="../index.html#journal" class="back-link">← Back to Journal</a>
+            <h1>What building a bike taught me about systems</h1>
+            <p class="article-meta">October 15, 2024 • 7 min read</p>
+        </header>
+
+        <div class="article-content">
+            <p>Last month, I spent three weeks in my garage rebuilding a 1972 Honda CB750. Seized engine, rusted chrome, electrical system held together with hope and electrical tape. By most measures, a terrible project.</p>
+
+            <p>But as I pulled the engine apart and cleaned decades of carbon buildup from the pistons, something clicked: <em>This is exactly how I should build software.</em></p>
+
+            <h2>Start with constraints</h2>
+
+            <p>The CB750 was designed in 1969 with brutal constraints: reliable, affordable, serviceable with basic tools. No computer diagnostics. No proprietary parts. Everything could be taken apart and put back together by a guy in a garage.</p>
+
+            <p>Modern bikes are "better" on every metric—faster, smoother, more efficient. But try servicing a 2024 sportbike without a dealership's diagnostic computer. The complexity becomes the constraint.</p>
+
+            <p><strong>The lesson:</strong> Design for your actual constraints, not your aspirational ones.</p>
+
+            <p>When I build education technology for rural schools, I'm not designing for gigabit fiber and unlimited budgets. I'm designing for intermittent power, limited bandwidth, and teachers who have 47 other things to do.</p>
+
+            <p>Just like that CB750: Make it work with what you've got.</p>
+
+            <h2>Fewer moving parts = more reliability</h2>
+
+            <p>The CB750 engine has four cylinders, four carburetors, eight valves, and about a dozen major components. That's it. No fuel injection, no computer, no sensors.</p>
+
+            <p>When something breaks, you can see it. When something needs adjustment, you can feel it. Simplicity isn't a compromise—it's a feature.</p>
+
+            <p>I see the same pattern in software. The most reliable systems I've built are the ones with the fewest dependencies, the clearest logic, the most obvious data flow.</p>
+
+            <p><strong>Every component you add is another thing that can fail.</strong> Choose wisely.</p>
+
+            <h2>Maintenance is design</h2>
+
+            <p>Honda engineers knew that oil changes, valve adjustments, and carburetor cleaning were inevitable. So they made them easy. Drain plug at the lowest point. Valve covers that come off with four bolts. Carburetors that disconnect with two screws.</p>
+
+            <p>Maintenance wasn't an afterthought—it was core to the design.</p>
+
+            <p>How many software projects treat maintenance this way? We call it "legacy code" and complain about technical debt. But really, we just didn't design for change.</p>
+
+            <p><strong>The lesson:</strong> Assume things will need updating, fixing, adapting. Design for that from day one.</p>
+
+            <p>When I build ProScola lesson plans, I build them knowing teachers will adapt them. The system expects modification. That's not a bug—it's the entire point.</p>
+
+            <h2>The rhythm of deep work</h2>
+
+            <p>Rebuilding a motorcycle is meditative work. You can't rush it. Each step has to be done right or the whole system fails.</p>
+
+            <p>Torque the head bolts in the wrong sequence? Warped head. Skip cleaning the carburetor jets? Runs rough. Forget to gap the spark plugs? Won't start.</p>
+
+            <p>But when you slow down and focus on one thing at a time, there's a rhythm. Disassemble. Clean. Inspect. Replace what's worn. Reassemble. Test. Adjust.</p>
+
+            <p>It's the same rhythm I use for systems design:</p>
+
+            <ol>
+                <li><strong>Understand the current state</strong> (disassemble)</li>
+                <li><strong>Remove what doesn't work</strong> (clean)</li>
+                <li><strong>Identify the real problems</strong> (inspect)</li>
+                <li><strong>Fix the root causes</strong> (replace)</li>
+                <li><strong>Put it back together better</strong> (reassemble)</li>
+                <li><strong>See if it actually works</strong> (test)</li>
+                <li><strong>Refine based on reality</strong> (adjust)</li>
+            </ol>
+
+            <p>You can't skip steps. You can't fake your way through. The system will tell you when you're wrong.</p>
+
+            <h2>Know when to walk away</h2>
+
+            <p>Three weeks into the rebuild, I found a crack in the engine case. Small, but structural. The kind of thing that would eventually leak oil and ruin everything else.</p>
+
+            <p>I had two choices: weld it (risky, time-consuming, might fail) or find a new case (expensive, delays project, guaranteed to work).</p>
+
+            <p>I found a new case.</p>
+
+            <p>In software, we call this "technical debt." In motorcycles, we call it "cutting your losses."</p>
+
+            <p><strong>Sometimes the right move is to throw out the broken part and start fresh.</strong></p>
+
+            <p>Not because you failed. Because you're building something that needs to last.</p>
+
+            <h2>The joy of making it work</h2>
+
+            <p>After three weeks of work, I turned the key, thumbed the starter, and heard that beautiful inline-four purr to life. No misfires. No smoke. No leaks. Just smooth power and mechanical perfection.</p>
+
+            <p>That feeling—of taking something broken and making it work again through patience and craft—is why I do this work.</p>
+
+            <p>Whether it's a motorcycle engine or an education system, the principles are the same:</p>
+
+            <ul>
+                <li>Design for your real constraints</li>
+                <li>Keep it simple</li>
+                <li>Make it maintainable</li>
+                <li>Work with rhythm and patience</li>
+                <li>Know when to cut losses</li>
+                <li>Take pride in making things work</li>
+            </ul>
+
+            <p>That CB750 is now my daily rider. Reliable, beautiful, and built to last another 50 years.</p>
+
+            <p>That's the kind of system I want to build. Whether it runs on gasoline or code.</p>
+
+            <hr style="margin: var(--space-8) 0; border: none; border-top: 2px solid var(--sand);">
+
+            <p><em>Building systems that need to last? Let's talk about design principles that actually work. <a href="../index.html#contact" style="color: var(--indigo); text-decoration: underline;">Get in touch</a>.</em></p>
+        </div>
+    </article>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
