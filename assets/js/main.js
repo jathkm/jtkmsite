@@ -42,6 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (personalContent) observer.observe(personalContent);
   if (personalGrid) observer.observe(personalGrid);
   
+  // Personal section (new - about Jason)
+  const personalContainer = document.querySelector('.personal-container');
+  if (personalContainer) observer.observe(personalContainer);
+  
   // Consulting section
   const consultingContainer = document.querySelector('.consulting-container');
   if (consultingContainer) observer.observe(consultingContainer);
