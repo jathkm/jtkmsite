@@ -1,0 +1,17 @@
+{
+  "name": "jtkm-website",
+  "version": "1.0.0",
+  "description": "Personal brand website with CMS",
+  "scripts": {
+    "optimize-images": "node scripts/optimize-images.js",
+    "dev": "netlify dev",
+    "build": "echo 'No build step required'",
+    "test": "echo 'Tests coming soon'"
+  },
+  "dependencies": {
+    "sharp": "^0.33.0"
+  },
+  "devDependencies": {},
+  "author": "Jason Thompson",
+  "license": "MIT"
+}

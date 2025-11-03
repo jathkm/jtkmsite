@@ -1295,3 +1295,168 @@ body.nav-open {
   font-style: italic;
   margin-top: var(--space-6);
 }
+
+/* ===================================
+   CONTACT FORM STYLES
+   =================================== */
+
+.contact-header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.contact-header p {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: var(--space-4) auto 0;
+}
+
+.contact-form {
+  background: white;
+  padding: var(--space-8);
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-2);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: var(--space-6);
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+  color: var(--indigo);
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-2);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all var(--duration-base) var(--ease-out);
+  background: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--indigo);
+  box-shadow: 0 0 0 3px rgba(59, 79, 125, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+/* Form Validation States */
+.form-group input.valid,
+.form-group textarea.valid {
+  border-color: #10b981;
+}
+
+.form-group input.error,
+.form-group textarea.error {
+  border-color: #ef4444;
+}
+
+.error-message {
+  display: block;
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: var(--space-2);
+  min-height: 1.25rem;
+}
+
+/* Form Status Messages */
+.form-status {
+  margin-top: var(--space-6);
+  text-align: center;
+}
+
+.form-status .success {
+  color: #065f46;
+  background: #d1fae5;
+  padding: var(--space-4);
+  border-radius: var(--radius-2);
+  margin: 0;
+  font-weight: 500;
+}
+
+.form-status .error {
+  color: #991b1b;
+  background: #fee2e2;
+  padding: var(--space-4);
+  border-radius: var(--radius-2);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Submit Button */
+.contact-form button[type="submit"] {
+  width: 100%;
+  margin-top: var(--space-4);
+}
+
+.contact-form button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Alternative Contact Methods */
+.contact-methods-alt {
+  text-align: center;
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+}
+
+.contact-methods-alt p {
+  margin-bottom: var(--space-3);
+}
+
+.contact-methods-alt a {
+  color: var(--indigo);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--duration-base);
+}
+
+.contact-methods-alt a:hover {
+  color: var(--warm-1);
+}
+
+.contact-methods-alt span {
+  margin: 0 var(--space-3);
+  color: var(--color-border);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: var(--space-6) var(--space-5);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form {
+    padding: var(--space-5) var(--space-4);
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: var(--space-3);
+    font-size: 0.9375rem;
+  }
+}

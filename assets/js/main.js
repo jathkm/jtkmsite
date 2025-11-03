@@ -81,35 +81,22 @@ if (heroContent && heroSection) {
 }
 
 // ============================================
-// NAVIGATION - Hide/Show on Scroll
+// NAVIGATION - Always Visible with Shadow on Scroll
 // ============================================
 
-let lastScroll = 0;
 const nav = document.getElementById('mainNav');
-const scrollThreshold = 100;
 
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
   
-  // Add shadow when scrolled
+  // Add shadow when scrolled (keeps nav visible with depth effect)
   if (currentScroll > 50) {
     nav.classList.add('scrolled');
   } else {
     nav.classList.remove('scrolled');
   }
   
-  // Hide/show nav on scroll (only after threshold)
-  if (currentScroll <= scrollThreshold) {
-    nav.style.transform = 'translateY(0)';
-  } else if (currentScroll > lastScroll && currentScroll > scrollThreshold) {
-    // Scrolling down - hide nav
-    nav.style.transform = 'translateY(-100%)';
-  } else {
-    // Scrolling up - show nav
-    nav.style.transform = 'translateY(0)';
-  }
-  
-  lastScroll = currentScroll;
+  // Nav stays fixed at top always - no hide/show behavior
 });
 
 // ============================================
